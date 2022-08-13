@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Продукты</h1>
+                    <h1 class="m-0">Товары</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -36,13 +36,22 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Наименование</th>
+                                    <th>Описание</th>
+                                    <th>Контент</th>
+                                    <th>Цена</th>
+                                    <th>Колличество на кладе</th>
                                 </tr>
                                </thead>
                                 <tbody>
                                 @foreach($products as $product)
                                     <tr>
-                                        <td>{$product->id}}</td>
+                                        <td>{{$product->id}}</td>
                                         <td><a href="{{route('product.show', $product->id)}}">{{$product->title}}</a></td>
+                                        <td>{{$product->title}}</td>
+                                        <td>{{$product->description}}</td>
+                                        <td>{{$product->content}}</td>
+                                        <td>{{$product->price}}</td>
+                                        <td>{{$product->count}}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
